@@ -1,6 +1,6 @@
 # Nomos - Catálogo de Produtos Open Source
 
-![Nomos Logo Placeholder](https://i.imgur.com/JOKsNeT.jpeg) <!-- Usando a imagem que você me passou como placeholder -->
+![Nomos Logo Placeholder](https://ibb.co/GQkB6bPr) 
 
 **Open, organizado e acessível. Um passo real para a digitalização de pequenos negócios.**
 
