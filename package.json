@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Este é um projeto full-stack de um **Catálogo de Produtos Inteligente**, desenvolvido como um exercício técnico para avaliar as habilidades de design de sistema, desenvolvimento de frontend e backend, containerização e automação de infraestrutura. A aplicação permite que os usuários visualizem uma lista de produtos, pesquisem por nome e vejam os detalhes de um produto específico.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlberthRamos/Catalogo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AlberthRamos/Catalogo/issues"
+  },
+  "homepage": "https://github.com/AlberthRamos/Catalogo#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1"
+  }
+}
