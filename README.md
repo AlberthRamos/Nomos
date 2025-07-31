@@ -1,8 +1,3 @@
-Conteúdo do README_Nomos_Alberth.md:
-
-markdown
-Copiar
-Editar
 # Nomos - Catálogo de Produtos Open Source
 
 ![Nomos Logo Placeholder](https://i.ibb.co/6N1qRzV/Nomos-Logo.png)
