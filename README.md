@@ -1,6 +1,11 @@
+Conteúdo do README_Nomos_Alberth.md:
+
+markdown
+Copiar
+Editar
 # Nomos - Catálogo de Produtos Open Source
 
-![Nomos Logo Placeholder](https://ibb.co/GQkB6bPr) 
+![Nomos Logo Placeholder](https://i.ibb.co/6N1qRzV/Nomos-Logo.png)
 
 **Open, organizado e acessível. Um passo real para a digitalização de pequenos negócios.**
 
@@ -12,134 +17,144 @@
 
 O projeto foi desenvolvido com o propósito de ajudar MEIs, comerciantes locais, revendedores e distribuidores a **organizar, apresentar e compartilhar seus produtos** com facilidade, mesmo sem conhecimento técnico.
 
-### Ideologia Open Source
+### 🔍 Visão do Projeto
 
-- **Gratuito e Transparente:** Nomos é e sempre será gratuito para uso básico.
-- **Extensível:** Pensado para que desenvolvedores possam contribuir, adaptar ou até comercializar versões personalizadas.
-- **Comunidade:** O objetivo é construir uma base sólida de micro-SaaS que possa evoluir com a ajuda da comunidade.
+Ao desenvolver o Nomos, não me limitei a resolver um desafio técnico. Pensei em como criar uma solução que fosse, acima de tudo, um modelo de negócio sustentável e de impacto real.
+
+Nomos foi concebido para atender a uma necessidade muito presente, mas pouco explorada digitalmente: a digitalização acessível e simplificada para pequenos negócios, como MEIs, comerciantes locais e revendedores. Ao oferecer uma plataforma leve, gratuita e extensível, o Nomos facilita a entrada desses empreendedores no mundo digital, sem a complexidade e os custos altos de um e-commerce tradicional.
+
+Além disso, adotando a filosofia open source, o projeto abre espaço para crescimento comunitário e para que desenvolvedores possam adaptar e criar versões personalizadas, gerando oportunidades de negócio para diferentes perfis.
+
+Em suma, Nomos é mais que um projeto técnico — é uma solução pensada para gerar valor real, sustentabilidade e transformação digital para pequenos negócios.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-| Camada | Tecnologia | Por quê? |
-| :--- | :--- | :--- |
-| **Frontend** | **Angular com TypeScript** | Estrutura robusta e escalável para o frontend. |
-| **Backend** | **Node.js com Express e TypeScript** | Performance e segurança com tipagem para a API. |
-| **Banco de Dados** | **MySQL com TypeORM** | Um banco de dados relacional sólido com um ORM moderno que facilita a vida. |
-| **Monitoramento** | **PM2** | Gerenciamento de processos e monitoramento em tempo real do backend. |
-| **Containerização** | **Docker & Docker Compose** | Garante um ambiente de desenvolvimento padronizado e fácil de rodar. |
-| **Infraestrutura** | **Kubernetes (Manifestos YAML)** | Prepara a aplicação para deploy em nuvem de forma escalável e resiliente. |
+| Camada         | Tecnologia                  | Por quê?                                          |
+| -------------- | -------------------------- | ------------------------------------------------ |
+| **Frontend**   | Angular com TypeScript       | Estrutura robusta e escalável para o frontend.    |
+| **Backend**    | Node.js com Express e TypeScript | Performance e segurança com tipagem para a API.    |
+| **Banco de Dados** | MySQL com TypeORM         | Banco relacional sólido com ORM moderno que facilita a vida. |
+| **Monitoramento** | PM2                       | Gerenciamento de processos e monitoramento em tempo real. |
+| **Containerização** | Docker & Docker Compose  | Ambiente padronizado e fácil de executar.         |
+| **Infraestrutura** | Kubernetes (Manifestos YAML) | Deploy escalável e resiliente em nuvem.            |
 
 ---
 
 ## 🚀 Como Rodar Localmente
 
-**Pré-requisitos:** Você só precisa do **Docker** e do **Docker Compose** instalados.
+**Pré-requisitos:** Docker e Docker Compose instalados.
 
-**1. Clone o projeto:**
+### 1. Clone o projeto:
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/AlberthRamos/Nomos.git
 cd nomos
-```
+2. Configure as variáveis de ambiente:
+Copie o arquivo de exemplo .env.example para um novo arquivo .env:
 
-**2. Configure as Variáveis de Ambiente:**
-Copie o arquivo de exemplo `.env.example` para um novo arquivo chamado `.env`.
-```bash
+bash
+Copiar
+Editar
 cp .env.example .env
-```
-> **Importante:** Abra o arquivo `.env` e preencha as variáveis, especialmente `JWT_SECRET` com uma chave secreta forte.
+Importante: Edite o arquivo .env e preencha as variáveis, especialmente JWT_SECRET com uma chave secreta forte.
 
-**3. Suba a Aplicação com Docker Compose:**
-Este comando constrói as imagens e sobe os contêineres do frontend, backend e banco de dados.
-```bash
+3. Suba a aplicação com Docker Compose:
+bash
+Copiar
+Editar
 docker-compose up --build
-```
+4. Acesse a aplicação:
+Frontend: http://localhost:4200
 
-**4. Acesse a Aplicação:**
-*   **Frontend:** [http://localhost:4200](http://localhost:4200)
-*   **API Backend:** `http://localhost:3000`
+Backend API: http://localhost:3000
 
----
+📊 Monitoramento com PM2 (Localmente)
+Se rodar o backend fora do Docker, pode usar PM2 para gerenciar e monitorar o processo.
 
-## 📊 Monitoramento com PM2 (Localmente)
+Comandos úteis:
+Iniciar com PM2:
 
-O backend é gerenciado pelo PM2, o que nos dá superpoderes de monitoramento.
-
-**1. Iniciar com PM2 (se não estiver usando Docker):**
-Se você estiver rodando o backend fora do Docker, pode iniciá-lo com:
-```bash
+bash
+Copiar
+Editar
 npm run start-pm2
-```
+Ver logs em tempo real:
 
-**2. Ver Logs em Tempo Real:**
-```bash
-npm run logs # ou pm2 logs nomos-api
-```
+bash
+Copiar
+Editar
+npm run logs
+Monitorar métricas no terminal:
 
-**3. Monitorar Métricas no Terminal:**
-Um painel direto no seu terminal com uso de CPU, memória, etc.
-```bash
-npm run monitor # ou pm2 monit
-```
+bash
+Copiar
+Editar
+npm run monitor
+Dashboard web:
 
-**4. Dashboard Web (Local):**
-Um dashboard completo no seu navegador.
-```bash
+bash
+Copiar
+Editar
 pm2 dashboard
-```
+O arquivo ecosystem.config.js no backend contém as configurações do PM2.
 
-O arquivo `ecosystem.config.js` na raiz do backend contém todas as configurações do PM2.
+📚 Documentação da API (Swagger/OpenAPI)
+(A implementar) — Futuramente será adicionada documentação interativa da API via Swagger para facilitar testes e consulta.
 
----
+Endpoints principais:
+POST /api/auth/register — Registrar novo usuário
 
-## 📚 Documentação da API (Swagger/OpenAPI)
+POST /api/auth/login — Login e geração de token JWT
 
-*(A ser implementado)* - Uma futura melhoria será adicionar o Swagger para gerar uma documentação interativa da API, permitindo testar os endpoints diretamente do navegador.
+GET /api/products — Listar produtos do usuário autenticado
 
-**Endpoints Principais:**
+POST /api/products — Criar novo produto
 
-*   `POST /api/auth/register` - Registra um novo usuário.
-*   `POST /api/auth/login` - Realiza o login e retorna um token JWT.
-*   `GET /api/products` - Retorna a lista de produtos do usuário autenticado.
-*   `POST /api/products` - Cria um novo produto (sujeito às regras do plano).
-*   `GET /api/products/:id` - Retorna um produto específico.
-*   `PUT /api/products/:id` - Atualiza um produto.
-*   `DELETE /api/products/:id` - Deleta um produto.
+GET /api/products/:id — Detalhes de um produto específico
 
-> Todas as rotas de produtos (`/api/products`) são protegidas e exigem um token JWT no cabeçalho `Authorization: Bearer <token>`.
+PUT /api/products/:id — Atualizar um produto
 
----
+DELETE /api/products/:id — Excluir um produto
 
-## ☁️ Deploy na Nuvem (AWS EKS com Kubernetes)
+Todas as rotas de produtos requerem token JWT no cabeçalho Authorization: Bearer <token>.
 
-Os manifestos na pasta `/kubernetes` estão prontos para o deploy.
+☁️ Deploy na Nuvem (AWS EKS com Kubernetes)
+Passos para deploy:
+Construa e publique as imagens Docker em um registro (ex: Amazon ECR).
 
-**Etapas:**
-1.  **Construa e Publique as Imagens Docker** para um registro (ex: Amazon ECR).
-2.  **Atualize os Nomes das Imagens** nos arquivos `k8s/backend-deployment.yaml` e `k8s/frontend-deployment.yaml`.
-3.  **Aplique os Manifestos** no seu cluster Kubernetes:
-    ```bash
-    # Crie o namespace e os segredos primeiro
-    kubectl apply -f k8s/namespace.yaml
-    kubectl apply -f k8s/mysql-secret.yaml # Lembre de encodar suas senhas em base64
+Atualize os nomes das imagens nos arquivos de deployment:
 
-    # Aplique o resto
-    kubectl apply -f k8s/mysql-configmap.yaml
-    kubectl apply -f k8s/mysql-deployment.yaml
-    kubectl apply -f k8s/backend-deployment.yaml
-    kubectl apply -f k8s/frontend-deployment.yaml
-    ```
-4.  **Acesse a Aplicação** pegando o IP externo do serviço `frontend-service`.
+k8s/backend-deployment.yaml
 
----
+k8s/frontend-deployment.yaml
 
-## 🤝 Como Contribuir
+Aplique os manifestos no cluster Kubernetes:
 
-Este é um projeto open source e toda ajuda é bem-vinda! Por favor, leia o nosso `CONTRIBUTING.md` para entender nossas convenções de código, commits e como abrir um Pull Request.
+bash
+Copiar
+Editar
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/mysql-secret.yaml  # Senhas em base64
+kubectl apply -f k8s/mysql-configmap.yaml
+kubectl apply -f k8s/mysql-deployment.yaml
+kubectl apply -f k8s/backend-deployment.yaml
+kubectl apply -f k8s/frontend-deployment.yaml
+Acesse a aplicação pelo IP externo do serviço frontend-service.
 
----
+🤝 Como Contribuir
+🚀 Continuidade e Colaboração
+Este projeto foi criado com a visão de continuidade e crescimento futuros. A ideia é que o Nomos evolua constantemente, com novas funcionalidades e melhorias, sempre aberto para a comunidade.
 
-## 📜 Licença
+Quem quiser contribuir, colaborar, sugerir melhorias ou desenvolver funcionalidades pode entrar em contato comigo diretamente pelo meu perfil no LinkedIn:
+https://www.linkedin.com/in/alberthdev/
 
-Este projeto é licenciado sob a **Licença MIT**. Veja o arquivo `LICENSE` para mais detalhes.
+Este é um projeto open source e sua contribuição é muito bem-vinda! Por favor, leia o CONTRIBUTING.md para conhecer nossas regras e o processo para participar da construção desse projeto.
+
+📜 Licença
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para detalhes.
+
+👤 Créditos
+Desenvolvido por Alberth Ramos da Silva
+https://www.linkedin.com/in/alberthdev/
+Curitiba - PR - Brasil - 2025
