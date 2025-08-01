@@ -8,7 +8,7 @@
 
 ## 🧠 Sobre o Projeto Nomos
 
-**Nomos** é um microSaaS **open source**, pensado para ser uma solução gratuita, extensível e leve para pequenos negócios que desejam criar catálogos de produtos online — sem a complexidade de um e-commerce ou custos altos.
+**Nomos** é um microSaaS **open source**, pensado para ser uma solução gratuita, extensível e leve para pequenos negócios que desejam criar catálogos de produtos online sem a complexidade de um e-commerce ou custos altos.
 
 O projeto foi desenvolvido com o propósito de ajudar MEIs, comerciantes locais, revendedores e distribuidores a **organizar, apresentar e compartilhar seus produtos** com facilidade, mesmo sem conhecimento técnico.
 
