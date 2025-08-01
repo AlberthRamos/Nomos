@@ -1,24 +1,34 @@
 {
-  "name": "app",
+  "name": "nomos",
   "version": "1.0.0",
-  "description": "Este é um projeto full-stack de um **Catálogo de Produtos Inteligente**, desenvolvido como um exercício técnico para avaliar as habilidades de design de sistema, desenvolvimento de frontend e backend, containerização e automação de infraestrutura. A aplicação permite que os usuários visualizem uma lista de produtos, pesquisem por nome e vejam os detalhes de um produto específico.",
-  "main": "index.js",
+  "description": "Projeto full-stack Nomos: Catálogo de Produtos Inteligente com backend em Node.js, Sequelize e frontend em React.",
+  "main": "src/backend/index.js",
   "scripts": {
+    "start": "node src/backend/index.js",
+    "dev": "nodemon src/backend/index.js",
+    "client": "npm start --prefix src/frontend",
+    "client-install": "npm install --prefix src/frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlberthRamos/Catalogo.git"
+    "url": "git+https://github.com/AlberthRamos/Nomos.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alberth Ramos da Silva",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/AlberthRamos/Catalogo/issues"
+    "url": "https://github.com/AlberthRamos/Nomos/issues"
   },
-  "homepage": "https://github.com/AlberthRamos/Catalogo#readme",
+  "homepage": "https://github.com/AlberthRamos/Nomos#readme",
   "dependencies": {
-    "dotenv": "^17.2.1"
+    "express": "^4.18.2",
+    "sequelize": "^6.32.1",
+    "mysql2": "^3.2.0",
+    "dotenv": "^17.2.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
