@@ -1,7 +1,7 @@
 {
   "name": "nomos-backend",
   "version": "1.0.0",
-  "description": "Backend for the Nomos micro-SaaS",
+  "description": "Backend para o Nomos micro-SaaS",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -11,8 +11,8 @@
     "monitor": "pm2 monit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["saas", "catalog", "open-source", "pm2"],
-  "author": "Nomos Open Source",
+  "keywords": ["saas", "catalogo", "open-source", "pm2"],
+  "author": "Alberth Ramos da Silva",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
