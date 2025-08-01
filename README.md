@@ -92,24 +92,6 @@ pm2 dashboard
 
 ---
 
-## 📚 Documentação da API (Swagger/OpenAPI)
-
-*(A implementar)* — Futuramente será adicionada documentação interativa da API via Swagger para facilitar testes e consulta.
-
-### Endpoints principais:
-
-- `POST /api/auth/register` — Registrar novo usuário  
-- `POST /api/auth/login` — Login e geração de token JWT  
-- `GET /api/products` — Listar produtos do usuário autenticado  
-- `POST /api/products` — Criar novo produto  
-- `GET /api/products/:id` — Detalhes de um produto específico  
-- `PUT /api/products/:id` — Atualizar um produto  
-- `DELETE /api/products/:id` — Excluir um produto  
-
-> Todas as rotas de produtos requerem token JWT no cabeçalho `Authorization: Bearer <token>`.
-
----
-
 ## ☁️ Deploy na Nuvem (AWS EKS com Kubernetes)
 
 ### Passos para deploy:
