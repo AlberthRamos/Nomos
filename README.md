@@ -43,112 +43,115 @@ Em suma, Nomos é mais que um projeto técnico — é uma solução pensada para
 
 ### 1. Clone o projeto:
 
-```bash
 git clone https://github.com/AlberthRamos/Nomos.git
 cd nomos
 
-2. Configure as variáveis de ambiente:
-Copie o arquivo de exemplo .env.example para um novo arquivo .env:
+### 2. Configure as variáveis de ambiente:
 
-```bash
+Copie o arquivo de exemplo `.env.example` para um novo arquivo `.env`:
+
 cp .env.example .env
 
-3. Suba a aplicação com Docker Compose:
-bash
-Copiar
-Editar
+> **Importante:** Edite o arquivo `.env` e preencha as variáveis, especialmente `JWT_SECRET` com uma chave secreta forte.
+
+### 3. Suba a aplicação com Docker Compose:
+
 docker-compose up --build
-4. Acesse a aplicação:
-Frontend: http://localhost:4200
 
-Backend API: http://localhost:3000
+### 4. Acesse a aplicação:
 
-📊 Monitoramento com PM2 (Localmente)
+- Frontend: [http://localhost:4200](http://localhost:4200)  
+- Backend API: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📊 Monitoramento com PM2 (Localmente)
+
 Se rodar o backend fora do Docker, pode usar PM2 para gerenciar e monitorar o processo.
 
-Comandos úteis:
+**Comandos úteis:**
 
 Iniciar com PM2:
 
-bash
-Copiar
-Editar
 npm run start-pm2
+
 Ver logs em tempo real:
 
-bash
-Copiar
-Editar
 npm run logs
+
 Monitorar métricas no terminal:
 
-bash
-Copiar
-Editar
 npm run monitor
+
 Dashboard web:
 
-bash
-Copiar
-Editar
 pm2 dashboard
-O arquivo ecosystem.config.js no backend contém as configurações do PM2.
 
-📚 Documentação da API (Swagger/OpenAPI)
-(A implementar) — Futuramente será adicionada documentação interativa da API via Swagger para facilitar testes e consulta.
+> O arquivo `ecosystem.config.js` no backend contém as configurações do PM2.
 
-Endpoints principais:
-POST /api/auth/register — Registrar novo usuário
+---
 
-POST /api/auth/login — Login e geração de token JWT
+## 📚 Documentação da API (Swagger/OpenAPI)
 
-GET /api/products — Listar produtos do usuário autenticado
+*(A implementar)* — Futuramente será adicionada documentação interativa da API via Swagger para facilitar testes e consulta.
 
-POST /api/products — Criar novo produto
+### Endpoints principais:
 
-GET /api/products/:id — Detalhes de um produto específico
+- `POST /api/auth/register` — Registrar novo usuário  
+- `POST /api/auth/login` — Login e geração de token JWT  
+- `GET /api/products` — Listar produtos do usuário autenticado  
+- `POST /api/products` — Criar novo produto  
+- `GET /api/products/:id` — Detalhes de um produto específico  
+- `PUT /api/products/:id` — Atualizar um produto  
+- `DELETE /api/products/:id` — Excluir um produto  
 
-PUT /api/products/:id — Atualizar um produto
+> Todas as rotas de produtos requerem token JWT no cabeçalho `Authorization: Bearer <token>`.
 
-DELETE /api/products/:id — Excluir um produto
+---
 
-Todas as rotas de produtos requerem token JWT no cabeçalho Authorization: Bearer <token>.
+## ☁️ Deploy na Nuvem (AWS EKS com Kubernetes)
 
-☁️ Deploy na Nuvem (AWS EKS com Kubernetes)
-Passos para deploy:
-Construa e publique as imagens Docker em um registro (ex: Amazon ECR).
+### Passos para deploy:
 
-Atualize os nomes das imagens nos arquivos de deployment:
+1. Construa e publique as imagens Docker em um registro (ex: Amazon ECR).
 
-k8s/backend-deployment.yaml
+2. Atualize os nomes das imagens nos arquivos de deployment:
 
-k8s/frontend-deployment.yaml
+- `k8s/backend-deployment.yaml`  
+- `k8s/frontend-deployment.yaml`
 
-Aplique os manifestos no cluster Kubernetes:
+3. Aplique os manifestos no cluster Kubernetes:
 
-bash
-Copiar
-Editar
 kubectl apply -f k8s/namespace.yaml
 kubectl apply -f k8s/mysql-secret.yaml  # Senhas em base64
 kubectl apply -f k8s/mysql-configmap.yaml
 kubectl apply -f k8s/mysql-deployment.yaml
 kubectl apply -f k8s/backend-deployment.yaml
 kubectl apply -f k8s/frontend-deployment.yaml
-Acesse a aplicação pelo IP externo do serviço frontend-service.
 
-🤝 Como Contribuir
+4. Acesse a aplicação pelo IP externo do serviço `frontend-service`.
+
+---
+
+## 🤝 Como Contribuir
+
 Este projeto foi criado com a visão de continuidade e crescimento futuros. A ideia é que o Nomos evolua constantemente, com novas funcionalidades e melhorias, sempre aberto para a comunidade.
 
-Quem quiser contribuir, colaborar, sugerir melhorias ou desenvolver funcionalidades pode entrar em contato comigo diretamente pelo meu perfil no LinkedIn:
+Quem quiser contribuir, colaborar, sugerir melhorias ou desenvolver funcionalidades pode entrar em contato comigo diretamente pelo meu perfil no LinkedIn:  
 https://www.linkedin.com/in/alberthdev/
 
-Este é um projeto open source e sua contribuição é muito bem-vinda! Por favor, leia o arquivo CONTRIBUTING.md para conhecer nossas regras e o processo para participar da construção desse projeto.
+Este é um projeto open source e sua contribuição é muito bem-vinda! Por favor, leia o arquivo `CONTRIBUTING.md` para conhecer nossas regras e o processo para participar da construção desse projeto.
 
-📜 Licença
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para detalhes.
+---
 
-👤 Créditos
-Desenvolvido por Alberth Ramos da Silva
-https://www.linkedin.com/in/alberthdev/
+## 📜 Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para detalhes.
+
+---
+
+## 👤 Créditos
+
+Desenvolvido por **Alberth Ramos da Silva**  
+https://www.linkedin.com/in/alberthdev/  
 Curitiba - PR - Brasil - 2025
