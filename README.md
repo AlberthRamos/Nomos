@@ -44,6 +44,7 @@ Em suma, Nomos é mais que um projeto técnico — é uma solução pensada para
 ### 1. Clone o projeto:
 
 git clone https://github.com/AlberthRamos/Nomos.git
+
 cd nomos
 
 ### 2. Configure as variáveis de ambiente:
