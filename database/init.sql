@@ -1,5 +1,5 @@
--- Create the products table if it doesn't exist
--- While Sequelize handles table creation, this ensures the table exists for seeding even if the backend is not running.
+-- Cria a tabela de produtos caso ela ainda não exista
+-- Embora o Sequelize cuide da criação de tabelas, isso garante que a tabela exista para inserção de dados mesmo se o backend não estiver em execução.
 CREATE TABLE IF NOT EXISTS `products` (
   `id` CHAR(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `nome` VARCHAR(255) NOT NULL,
@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Insert sample data
--- We use INSERT IGNORE to prevent errors if the data already exists (e.g., on container restart)
+-- Insere dados de exemplo
+-- Utilizamos INSERT IGNORE para evitar erros caso os dados já existam (por exemplo, ao reiniciar o container)
 INSERT IGNORE INTO `products` (`id`, `nome`, `descricao`, `preco`, `url_imagem`, `quantidade_em_estoque`, `createdAt`, `updatedAt`) VALUES
 (UUID(), 'Laptop Gamer Pro', 'Um laptop de alta performance para jogos e trabalho pesado, com placa de vídeo dedicada e processador de última geração.', 8500.00, 'https://i.imgur.com/JOKsNeT.jpeg', 15, NOW(), NOW()),
 (UUID(), 'Smartphone Futura X', 'Smartphone com câmera tripla de 108MP, tela AMOLED de 120Hz e bateria de longa duração.', 4200.50, 'https://i.imgur.com/JOKsNeT.jpeg', 30, NOW(), NOW()),
